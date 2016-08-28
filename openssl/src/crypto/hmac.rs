@@ -97,7 +97,7 @@ impl HMAC {
                                              key.len() as c_int,
                                              md,
                                              0 as *const _);
-            assert_eq!(r, 1);
+            assert!(r != 0);
         }
         self.state = Reset;
     }
